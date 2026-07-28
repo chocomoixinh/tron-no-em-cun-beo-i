@@ -8,17 +8,44 @@ canvas{
     display:block;
     margin:auto;
 }
-#controls{
-    margin-top:20px;
-    display:flex;
-    justify-content:center;
-    gap:30px;
+#gameContainer{
+    position: relative;
+    width: 800px;
+    margin: auto;
 }
 
-#controls button{
-    width:90px;
-    height:90px;
-    font-size:40px;
-    border:none;
-    border-radius:20px;
+#leftBtn,
+#rightBtn{
+    position: absolute;
+    bottom: 20px;
+
+    width: 85px;
+    height: 85px;
+
+    border: none;
+    border-radius: 50%;
+
+    font-size: 40px;
+    font-weight: bold;
+
+    background: rgba(255,255,255,0.25);
+    color: white;
+
+    backdrop-filter: blur(5px);
+
+    cursor: pointer;
+    user-select: none;
+}
+
+#leftBtn{
+    left: 20px;
+}
+
+#rightBtn{
+    right: 20px;
+}
+
+#leftBtn:active,
+#rightBtn:active{
+    background: rgba(255,255,255,0.45);
 }
