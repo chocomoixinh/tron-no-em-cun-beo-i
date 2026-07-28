@@ -36,7 +36,7 @@ let boneX = Math.random() * 700;
 let boneY = 500;
 
 // ===== GAME =====
-let dogSpeed = 3.5;
+let dogSpeed = 2;
 let speed = 6;
 let score = 0;
 let gameOver = false;
@@ -148,7 +148,7 @@ function gameLoop() {
         dogY = -120;
         dogX = Math.random() * 700;
         score++;
-        dogSpeed += 0.08;
+        dogSpeed += 0.05;
     }
 
     ctx.drawImage(dog, dogX, dogY, 120, 120);
