@@ -6,6 +6,10 @@ body{
 
 canvas{
     display:block;
+    width:100vw;
+    height:100vh;
+    max-width:800px;
+    max-height:600px;
     margin:auto;
 }
 #gameContainer{

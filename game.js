@@ -1,5 +1,16 @@
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+
+    let h = window.innerHeight;
+    if (h > 700) h = 700; // giới hạn để game không quá cao
+
+    canvas.height = h;
+}
+
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
 
 // ===== ẢNH =====
 const background = new Image();
@@ -36,7 +47,7 @@ let boneX = Math.random() * 700;
 let boneY = 500;
 
 // ===== GAME =====
-let dogSpeed = 5;
+let dogSpeed = 3.5;
 let speed = 6;
 let score = 0;
 let gameOver = false;
@@ -147,7 +158,7 @@ function gameLoop() {
         dogY = -120;
         dogX = Math.random() * 700;
         score++;
-        dogSpeed += 0.2;
+        dogSpeed += 0.08;
     }
 
     ctx.drawImage(dog, dogX, dogY, 120, 120);
