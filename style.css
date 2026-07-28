@@ -8,3 +8,17 @@ canvas{
     display:block;
     margin:auto;
 }
+#controls{
+    margin-top:20px;
+    display:flex;
+    justify-content:center;
+    gap:30px;
+}
+
+#controls button{
+    width:90px;
+    height:90px;
+    font-size:40px;
+    border:none;
+    border-radius:20px;
+}
