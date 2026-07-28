@@ -1,16 +1,5 @@
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
-function resizeCanvas() {
-    canvas.width = window.innerWidth;
-
-    let h = window.innerHeight;
-    if (h > 700) h = 700; // giới hạn để game không quá cao
-
-    canvas.height = h;
-}
-
-resizeCanvas();
-window.addEventListener("resize", resizeCanvas);
 
 // ===== ẢNH =====
 const background = new Image();
