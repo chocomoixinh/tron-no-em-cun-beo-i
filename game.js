@@ -36,7 +36,7 @@ let boneX = Math.random() * 700;
 let boneY = 500;
 
 // ===== GAME =====
-let dogSpeed = 2.5;
+let dogSpeed = 3;
 let speed = 6;
 let score = 0;
 let gameOver = false;
