@@ -37,6 +37,8 @@ let boneSpeed = 4;
 let speed = 6;
 
 const keys = {};
+const leftBtn = document.getElementById("leftBtn");
+const rightBtn = document.getElementById("rightBtn");
 
 document.addEventListener("keydown", (e) => {
     keys[e.key] = true;
@@ -45,6 +47,12 @@ document.addEventListener("keydown", (e) => {
 document.addEventListener("keyup", (e) => {
     keys[e.key] = false;
 });
+
+leftBtn.addEventListener("touchstart", () => keys["ArrowLeft"] = true);
+leftBtn.addEventListener("touchend", () => keys["ArrowLeft"] = false);
+
+rightBtn.addEventListener("touchstart", () => keys["ArrowRight"] = true);
+rightBtn.addEventListener("touchend", () => keys["ArrowRight"] = false);
 
 background.onload = function () {
 
