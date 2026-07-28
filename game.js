@@ -51,6 +51,7 @@ let dogSpeed = 3.5;
 let speed = 6;
 let score = 0;
 let gameOver = false;
+let lives = 3;
 
 // ===== ĐIỀU KHIỂN =====
 const keys = {};
@@ -181,29 +182,49 @@ function gameLoop() {
     ctx.font = "bold 32px Arial";
     ctx.fillText("⭐ " + score, 20, 40);
 
+    ctx.fillStyle = "red";
+    ctx.font = "bold 32px Arial";
+    ctx.fillText("❤️ " + lives, 20, 80);
+
     // va chạm cún 1
     if (
-        martinX < dogX + 120 &&
-        martinX + 120 > dogX &&
-        martinY < dogY + 120 &&
-        martinY + 120 > dogY
-    ) {
-        failSound.play();
+    martinX < dogX + 120 &&
+    martinX + 120 > dogX &&
+    martinY < dogY + 120 &&
+    martinY + 120 > dogY
+) {
+    failSound.play();
+
+    lives--;
+
+    dogY = -120;
+    dogX = Math.random() * 700;
+
+    if (lives <= 0) {
         bgMusic.pause();
         gameOver = true;
     }
+}
 
     // va chạm cún 2
     if (
-        martinX < dog2X + 120 &&
-        martinX + 120 > dog2X &&
-        martinY < dog2Y + 120 &&
-        martinY + 120 > dog2Y
-    ) {
-        failSound.play();
+    martinX < dog2X + 120 &&
+    martinX + 120 > dog2X &&
+    martinY < dog2Y + 120 &&
+    martinY + 120 > dog2Y
+) {
+    failSound.play();
+
+    lives--;
+
+    dog2Y = -350;
+    dog2X = Math.random() * 700;
+
+    if (lives <= 0) {
         bgMusic.pause();
         gameOver = true;
     }
+}
 
     // ăn xương
     if (
